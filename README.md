@@ -135,3 +135,116 @@ Hay que tomar en cuenta que aunque los intervalos de confianza son herramientas 
 ![intervalos de confianza](https://ds055uzetaobb.cloudfront.net/brioche/uploads/s2e1sngoxw-confidence-intervals.svg?width=50)
 
 ## Pruebas de Hipótesis
+
+Cuando llegamos a **pruebas de hipótesis** tenemos una teoría sobre el mundo y como se ven nuestros datos recolectados. En este punto queremos saber si nuestra teoría es correcta o no. En este caso tenemos una o varias teorías. Algunas teorías podrían ser:
+
+* Masticar chicle puede causar piedras en el riñón.
+* El boxeo provoca daños al tejido cerebral.
+
+La recolección de datos nos permite validar (o no) estas teorías. En cualquier experimento, debemos de considerar la posibilidad de que nuestra teoría esté equivocada. A esto lo conocemos como **hipótesis nula** y la denotamos como *H0*. Las hipótesis nulas son de utilidad como un modelo para considerar la posibilidad de que nuestros datos pudieran ser explicado por aletoriedad. Por ejemplo, con una *H0* podemos simplificar que mascar chicle no es un riesgo para desarrollar piedras de riñón. 
+
+Por ejemplo, una empresa financiera utiliza un algoritmo de machine learning para detectar fraudes. En promoedio falla el 5% de casos al día. Después de una actualización, el algoritmo solo falla en promedio 3.5% al dia. Para aplicar una hipótesis nula, deberíamos preguntarnos: ¿Qué posibilidad hay de ver esos mismos resultados si el promedio fuera el 5%? En este caso, simplemente ponemos en duda que el promedio de fallos del algoritmo sea del 5% y estaríamos aplicando una *H0*. 
+
+Para usar correctamente un modelo normal, es importante que nuestro data set tenga suficientes data points. Una regla general es que para que nuestros resultados puedan ser calculados como éxito o fracaso, nuestra muestra debe ser lo suficientemente grande como para que tengamos 10 ocurrencias tanto de éxito como de fracaso.
+
+Regresando al algoritmo para detectar fraudes, supongamos que el porcentaje de fallos baja hasta el 0.8%. El número de muestras para considerar que una prueba sería exitosa es de 1,250. Dado que esperamos que el algoritmo falle en 0.8% de los casos y queremos que haya tanto 10 éxitos como 10 fracasos, nuestra operación sería la siguiente:
+
+    10 / 0.008 = 1250
+    
+Si hicieramos 100 pruebas con el agoritmo y tuvieramos 99 éxitos y 1 un fallo, podríamos determinar que el margen de error es del 1%, dado que:
+
+    √(0.99)(0.01)/100 ≈ 0.00995 
+    
+En este último caso, hemos calculado la desviación estándard para un modelo basado en una *H0* en donde la proporción es igual a 0.99.
+
+Con esto podemos usar un modelo normal basado en una hipótesis nula para calcular el **valor p**. El valor p nos da la probabilidad de encontrar el dato si la *H0* es verdadera. Por tanto, el valor de 0.05 (por ejemplo) significaría que *H0* sería cierta en 5% de los datos:
+
+![Valor p](https://ds055uzetaobb.cloudfront.net/brioche/uploads/AsrIl3KLAo-p-score.svg?width=400)
+
+En la imagen anterior, esperaríamos encontrar los resultados un 5% de las veces en la zona roja dado que los resultados están a 2 o más desviaciones estándard de la media. A esto nos refeririamos como un valor p de 0.05.
+
+Si el valor p es bajo, tenemos razones para pensar que la H0 es falsa. Es decir, el valor p nos puede mostrar que tanto nuestra hipótesis es cierta o falsa. en este caso usamos un valor p de 0.05 porque es un estándard en estadística para rechazar una hipótesis nula. Sin embargo, este no deja de ser un parámetro arbitrario y se debe de tomar con un grano de sal.
+
+Digamos que según un reporte gubernamental, el coche más eficiente del mercado puede recorrer entre 4.6 y 5 kilómetros por litro de gasolina (k/l). Las medidas de tendencia central en una muestra de 325 coches nos indican que:
+
+* La media es 4.5 k/l.
+* La mediana es 4.5 k/l.
+* La varianza es 3.2 k/l.
+* La desviación estándard es 0.56 k/l
+* El estimado de la desviación estándard de la población es de 0.56%
+
+En este caso queremos saber si el reporte está en lo correcto. De entrada, vemos que la media está fuera del rango dado por el gobierno por lo que tenemos que investigar más a fondo. Por tanto, nuestra *H0* es que el valor de μ es igual o mayor a 46. 
+
+Podemos entonces modelar la desviación estándard de la población usando las desviaciones estándard de nuestra muestra. Al no saber el promedio de la población, usaremos el promedio de la muestra. Esto requiere que usemos grados de libertar para corregir el sesgo de nuestra muestra. Por tanto, calculamos que s = 0.5678.
+
+Entonces, el error estándard es:
+
+    0.5678 / √325 = 0.0315
+    
+Basado en este error, si el promedio de la población es 4.6 esperaríamos que nuestra muestra caiga por debajo de 4.6 en 50% de los casos, debajo de 4.6 - 0.0325 = 4.5685 en 15.9% de los casos, debajo de 4,6 - 0.2(0.0315) = 4.537 en 2.3% de los casos y así sucesivamente. 
+
+Calculamos el z-score de nuestra muestra como 4.5, lo que haría que z fuera:
+
+    4.5665 - 4.6 / 0.0315 ≈ −1.063
+    
+lo que es solo un poco más que una desviación estándard por debajo de la *H0* de 46. Si el promedio es de 4,6, esperaríamos que el 14.4% de las muestras recolectadas se vieran así. Por tanto, no tenemos evidenvia para decir que el reporte esté equivocado. 
+
+## Errores de Tipo I o II
+
+Cuando trabajamos con datos experimentales, siempre hay un número de aletoriedad e incertidumbre en nuestros datos. Por ende, es de ayuda pensar sobre que tipos de errores se hacen.
+
+En las pruebas de hipótesis, tenemos una teoría que queremos probar y compararla con la *H0*. En este sentido, hay dos tipos de errores:
+
+* **Tipo I**: la *H0* es verdadera, pero la rechazamos (falso positivo).
+* **Tipo II**: la *H0* es falsa, pero la aceptamos (falso negativo).
+
+Digamos que tenemos una *H0* tiene un valor p de 0.05 o menor. Al rechazarlo tendríamos un falso positivo en 5% de los casos. En este caso, estamos aceptando la evidencia como válida en nuestra hipótesis alternativa. Sin embargo, como tenemos un *valor p* de 0.05 hemos aceptado que este resultado sucederá el 5% de las ocasiones debido a que la variación en las muestras aún si la *H0* es cierta. En este caso, caemos en un error de Tipo I. 
+
+En el siguiente diagrama, podemos notar una línea que representa el borde del valor p. Esta es una propción particular en la que tenemos que encontrar para rechazar la *H0*. Si nuestro experimento produce un valor por encima de p*, debemos de rechazar la *H0*. Se encontramos un valor por debajo de *H0*, no debemos de rechazar la *H0*. En este caso, los errores están marcados en rojo. El primer gráfico es un error de Tipo I y el segundo un error de Tipo II.
+
+![p-values h0](https://ds055uzetaobb.cloudfront.net/brioche/uploads/3FajXEVgOC-error-types.svg?width=500)
+
+Todo esto tiene implicaciones importantes en la vida real. Digamos que queremos crear un sistema de detección de enfermedades. En este caso, queremos reducir la cantidad de falsos positivos. Es decir, queremos poder detectar enfermedades la mayoría de las veces. Por ende, será imortante tener un valor p elevado dado que esté es la posibilidad de un falso positivo. Como queremos reducir la probabilidad de un falso positivo, necesitamos incrementar el valor p.
+
+Veamos que un valor p elevado significa que hay una mayor probabilidad de que salga un resultado positivo de un grupo de variaciones aleatorias en un modelo de *H0*. Como queremos evitar falsos negativos, tenemos que usar un valor p mayor. Nuestro sistema se volvera más sensible y menos probable de descartar resutados reales. En consecuencia, tendremos más resultados positivos (tanto falsos como verdaderos). 
+
+Si movieramos la línea de valores p, el diagrama cambia de la siguiente forma:
+
+!(diagrama valores p)[https://ds055uzetaobb.cloudfront.net/brioche/uploads/yrQO8msFXQ-group-2.svg?width=500]
+
+Al mover p* a la izquierda (aumentando el valor p) se reduce la probabilidad de un falso negativo, lo que aumenta la posibilidad de un falso positivo. Hay que notar que el p* representa la proporción crítica en el que deberíamos rechazar *H0*. Por tanto, cuando p* se mueve a la izquierda del valor p se incrementa.
+
+Los errores de Tipo I se le conoce como α (alfa) y a los de Tipo II se le conoce como β (beta). Saber que probabilidad hay que modificar depende de cada caso. Calcular α tiende a ser más fácil que calcular β porque aunque podemos calcular cualquier valor específico de un hipótesis alternativa, no podemos saber con exactitud el efecto verdadero que tendá el experimento. 
+
+El poder del experimento es la probabilida de que seremos capaces de encontrar el efecto que estamos buscando. Si conocemos β, podemos calcular mejor dicho efecto dado que es el complemento de β. Es decir, 1 - β. Para experimentos con resultados pequeños, podemos colectar datos extensivamente para detectar resultados. De otra manera, el ancho de banda de nuestro experimento es muy pequeño. 
+
+El tamaño de la muestra, el valor de α y el tamaño del efecto son variables que afectan a β. El tamaño del experimento determina la distribución en la curva normal. Hay que notar como la hipótesis altera la gráfica si incrementamos el tamaño de la muestra:
+
+![h0](https://ds055uzetaobb.cloudfront.net/brioche/uploads/lKgp9DeFKd-group-2.svg?width=500)
+
+Viendo los cambios de α dado los cambios de p*, vemos que β es afectado. La distancia entre *H0* y la hipótesis alternativa también tiene un impacto. Hay que notar que tan grande β se hace cuando las proporciones están cerca una de la otra:
+
+![h0](https://ds055uzetaobb.cloudfront.net/brioche/uploads/s7Mwyclcgi-close-ha.svg?width=500)
+
+Así mismo, incrementar las posibilidades de un falso positivo hacen que nuestro experimento sea más poderoso.
+
+![poder falso positivo](https://ds055uzetaobb.cloudfront.net/brioche/uploads/aUaHzgdwu1-power.svg?width=500)
+
+Considerando el poder del complemento de β, al reducir el tamaño de la muestra e incrementar la posibilidad de una falso negativo (β) disminuye el poder de nuestro experimento.
+
+Si incrementamos las posibilidades de un falso negativo (α), movemos p* a la izquierda lo que disminuye β y consecuentemente incrementaría el poder del experimento. Dicho de forma simple: una forma de hacer nuestro experimento más poderoso es apostar por obtener más falsos positivos. 
+
+Hay que tomar en cuenta que aunque no podemos reducir α y β reduciendo p*, es posible reducir a ambos. Cualquier cosa que reduzca la desviación estándard de nuestros datos reduce tanto α como β al mismo tiempo. El enfoque más común para lograr esto es incrementando el tamaño de la muestra:
+
+![Incremento muestra[(https://ds055uzetaobb.cloudfront.net/brioche/uploads/xxoPApdxp9-increased-sample-size.svg?width=500)
+
+Al cambiar el experimeto que reduce la desviación estándard, es posible reducir la probabilidad de ambos errores. Es por eso que los estudios más extensos suelen ser más significativos que los pequeños. 
+
+En resumen, todos los experimentos dependen de pruebas de hipótesis que es susceptible a dos tipos de errores. 
+
+* El error de tipo I (α) ocurre cuando rechazamos una *H0* que es cierta.
+* El error de tipo II (β) ocurre cuando no rechazamos una *H0* cuando es falsa.
+
+El poder del experimento es la probabilidad de encontrar resultados que son verdaderos y lo podemos describr como 1 - β.
+
+Cada experimento debe seleccionar un balance apropiado entre probabilidades de estos dos errores y estas decisiones deben estar guiadas por reglas estadísitcas en vez de consideraciones del mundo real en donde los errores serán dados por circunstancias del ambiente.
