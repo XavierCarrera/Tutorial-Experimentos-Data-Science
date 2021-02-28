@@ -130,9 +130,7 @@ Digamos que con una muestra de 900 árboles en un bosque, encontramos que 280 so
         
         ≈ 0.015 = 1.5%
         
-Hay que tomar en cuenta que aunque los intervalos de confianza son herramientas útiles, en 5% de los casos el valor real se encuentra fuera de este rango. Es decir, en 1 de cada 20 casos. En la siguiente gráfica podemos verlo representado, en donde la linea horizontal es el valor verdadero y en vertical tenemos los diferentes rangos:
-
-![intervalos de confianza](https://ds055uzetaobb.cloudfront.net/brioche/uploads/s2e1sngoxw-confidence-intervals.svg?width=50)
+Hay que tomar en cuenta que aunque los intervalos de confianza son herramientas útiles, en 5% de los casos el valor real se encuentra fuera de este rango. Es decir, en 1 de cada 20 casos. 
 
 ## Pruebas de Hipótesis
 
@@ -210,7 +208,7 @@ Veamos que un valor p elevado significa que hay una mayor probabilidad de que sa
 
 Si movieramos la línea de valores p, el diagrama cambia de la siguiente forma:
 
-!(diagrama valores p)[https://ds055uzetaobb.cloudfront.net/brioche/uploads/yrQO8msFXQ-group-2.svg?width=500]
+![diagrama valores p(https://ds055uzetaobb.cloudfront.net/brioche/uploads/yrQO8msFXQ-group-2.svg?width=500)
 
 Al mover p* a la izquierda (aumentando el valor p) se reduce la probabilidad de un falso negativo, lo que aumenta la posibilidad de un falso positivo. Hay que notar que el p* representa la proporción crítica en el que deberíamos rechazar *H0*. Por tanto, cuando p* se mueve a la izquierda del valor p se incrementa.
 
@@ -236,7 +234,7 @@ Si incrementamos las posibilidades de un falso negativo (α), movemos p* a la iz
 
 Hay que tomar en cuenta que aunque no podemos reducir α y β reduciendo p*, es posible reducir a ambos. Cualquier cosa que reduzca la desviación estándard de nuestros datos reduce tanto α como β al mismo tiempo. El enfoque más común para lograr esto es incrementando el tamaño de la muestra:
 
-![Incremento muestra[(https://ds055uzetaobb.cloudfront.net/brioche/uploads/xxoPApdxp9-increased-sample-size.svg?width=500)
+![Incremento muestra](https://ds055uzetaobb.cloudfront.net/brioche/uploads/xxoPApdxp9-increased-sample-size.svg?width=500)
 
 Al cambiar el experimeto que reduce la desviación estándard, es posible reducir la probabilidad de ambos errores. Es por eso que los estudios más extensos suelen ser más significativos que los pequeños. 
 
