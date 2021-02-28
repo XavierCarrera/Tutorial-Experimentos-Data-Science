@@ -208,7 +208,7 @@ Veamos que un valor p elevado significa que hay una mayor probabilidad de que sa
 
 Si movieramos la línea de valores p, el diagrama cambia de la siguiente forma:
 
-![diagrama valores p(https://ds055uzetaobb.cloudfront.net/brioche/uploads/yrQO8msFXQ-group-2.svg?width=500)
+![diagrama valores p](https://ds055uzetaobb.cloudfront.net/brioche/uploads/yrQO8msFXQ-group-2.svg?width=500)
 
 Al mover p* a la izquierda (aumentando el valor p) se reduce la probabilidad de un falso negativo, lo que aumenta la posibilidad de un falso positivo. Hay que notar que el p* representa la proporción crítica en el que deberíamos rechazar *H0*. Por tanto, cuando p* se mueve a la izquierda del valor p se incrementa.
 
