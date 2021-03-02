@@ -1,5 +1,7 @@
 # Diseño de Experimentos en Data Science
 
+Si tienes alguna pregunta, no dudes en contactarme en Twitter: @XaviGrowth
+
 ## Introducción: Observaciones y Experimentos
 
 La diferencia entre observaciones y experimentos es muy importante en estadística, por lo cual tiene un impacto importante en Data Science. Sin importar si usamos datos observacionales o experimentales, las conclusiones puede variar según como diseños un experimento.
