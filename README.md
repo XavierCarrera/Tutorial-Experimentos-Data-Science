@@ -4,7 +4,7 @@ Si tienes alguna pregunta, no dudes en contactarme en Twitter: @XaviGrowth
 
 ## Introducción: Observaciones y Experimentos
 
-La diferencia entre observaciones y experimentos es muy importante en estadística, por lo cual tiene un impacto importante en Data Science. Sin importar si usamos datos observacionales o experimentales, las conclusiones puede variar según como diseños un experimento.
+La diferencia entre observaciones y experimentos es muy importante en estadística, por lo cual tiene un impacto importante en Data Science. Sin importar si usamos datos observacionales o experimentales, las conclusiones pueden variar según como diseños un experimento.
 
 Supongamos que conoces a un grupo de boomers (nacidos entre 1960 y 1975) que gustan de escuchar a *The Rolling Stones*. ¿Sería correcto asumir que toda la generación boomer es fanática de *The Rolling Stones*? Por supuesto que no, porque aunque los boomers comparten muchas características generacionales no podemos asumir que sus gustos son idénticos. 
 
