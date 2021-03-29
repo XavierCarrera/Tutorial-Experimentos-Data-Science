@@ -16,7 +16,7 @@ En este caso, para llegar a conclusiones más solidas tenemos que diseñar un ex
 
 Es en estos casos que debemos hacer una distinción entre observaciones y experimentos.
 
-Una **observación** es el registro de un valor particular en un punto de tiempo determinado. Por ejemplo, un valor cuantititativo como cuando medías a los 10 años o un valor cualitativo como tu sabor favorito de helado. En un **estudio observacional** colectamos muchas observaciones que consideramos importantes. Sin embargo,no podemos cambiar nada sobre la situación o variables involucradas en el estudio.
+Una **observación** es el registro de un valor particular en un punto de tiempo determinado. Por ejemplo, un valor cuantititativo como cuanto medías a los 10 años o un valor cualitativo como tu sabor favorito de helado. En un **estudio observacional** colectamos muchas observaciones que consideramos importantes. Sin embargo,no podemos cambiar nada sobre la situación o variables involucradas en el estudio.
 
 En cambio, un **experimento** involucra la aplicación de tratamientos especiales para seleccionar grupos a lo que le sigue una observación de valores específicos. Los experimentos siempre involucran una manipulación directa o inderecta de la situación con el fin de encontrar una relación entre dos variables.
 
@@ -24,7 +24,7 @@ Por ejemplo, podríamos hacer un experimento que involucre dividir personas en d
 
 En este caso, hay que examinar el concepto de **significancia estadística**. Aquí no hacemos referencia a la importancia o diferencia en los resultados, sino a la posibilidad de que un resultado haya sido causado por aletoriedad. 
 
-Digamos que queremos saber si una moneda esta truqueada hacía resultar en cara cada vez que se tira. Si tiramos la moneda dos veces, el hecho de que en ambos casos haya salido cara significa que en realidad la moneda este truqueada. Por ende, no podemos decir que sea estadisticademente significativo. Si tiraramos la moneda 100 veces y todas fueran cara, en ese caso hablaríamos de significancia estadística porque es muy poco probable que eso suceda.
+Digamos que queremos saber si una moneda esta truqueada hacía resultar en cara cada vez que se tira. Si tiramos la moneda dos veces, el hecho de que en ambos casos haya salido cara no significa que en realidad la moneda este truqueada. Por ende, no podemos decir que sea estadisticademente significativo. Si tiraramos la moneda 100 veces y todas fueran cara, en ese caso hablaríamos de significancia estadística porque es muy poco probable que eso suceda.
 
 ## Probabilidad Bayesiana
 
@@ -53,11 +53,11 @@ Por tanto, la posibilidad de tener la enfermedad es del 50%. Veámoslo así: de 
    
 El objetivo de diseñar experimentos es controlar sesgos tanto como sea posible. Esto se puede hacer bloqueando unidades experimentales o controlando factores aleatoreos en un escenario. El objetivo es crear un experimento donde la única diference entre las unidades experimentales sea el tratamiendo que nos interesa. 
 
-Digamos que queremos estudiar las estaturas de los estudiantes en una escuela. Sería un error utilizar los datos del equipo escolar de basquetbol porque podemos asumir no son representativos al ser los estudiantes más altos. Una buena muestra puede incluir algunos jugadores de basquetbol, pero incluirlos exclusivamente crearía un sesgo. El resultado sería un promedio alto y poca desviación estándard en comparación si utilizaramos una muestra más representativa.
+Digamos que queremos estudiar las estaturas de los estudiantes en una escuela. Sería un error utilizar los datos del equipo escolar de basquetbol porque podemos asumir que no son representativos al ser los estudiantes más altos. Una buena muestra puede incluir algunos jugadores de basquetbol, pero incluirlos exclusivamente crearía un sesgo. El resultado sería un promedio alto y poca desviación estándard en comparación si utilizaramos una muestra más representativa.
 
-Sin embargo, no todos los sesgos son obvios. Tomemos las encuestas telefónicas hechas con números que son públicos. En este caso, los teléfonos fijos estarían más presentes y (presumiblemente) los contactos pertenecerían a personas de mayor edad. Por otra parte, las encuestas de producto tienden a ser respondidas por personas que tienen opiniones fuertes respecto al respecto.
+Sin embargo, no todos los sesgos son obvios. Tomemos las encuestas telefónicas hechas con números que son públicos. En este caso, los teléfonos fijos estarían más presentes y (presumiblemente) los contactos pertenecerían a personas de mayor edad. Por otra parte, las encuestas de producto tienden a ser respondidas por personas que tienen opiniones fuertes al respecto.
 
-Dado que es impráctio (y muchas veces imposible) medir los intereses individuales de cada cliente, el objetivo de nuestro diseño de experimentos es asegurar que las muestras sean representativas de la población de interés. La estrategia más sencilla es implementar un **muestro simple aleatorio** en donde el grupo de estudio es elegido al azar. Sin embargo, este enfoque puede no siempre ser el mejor. 
+Dado que es impráctico (y muchas veces imposible) medir los intereses individuales de cada cliente, el objetivo de nuestro diseño de experimentos es asegurar que las muestras sean representativas de la población de interés. La estrategia más sencilla es implementar un **muestro simple aleatorio** en donde el grupo de estudio es elegido al azar. Sin embargo, este enfoque puede no siempre ser el mejor. 
 
 Supongamos el siguiente escenario: queremos entrevistar a pasajeros de una aerolínea sobre el servicio que recibieron a bordo. Si tomaramos un día, hora, y terminal al azar ¿Sería esta un método que produzca una muestra representativa? Para esto, hay que tomar en cuenta algunos detalles:
 
