@@ -1,5 +1,9 @@
 # Diseño de Experimentos en Data Science
 
+Como en cualquier otra ciencia, la ciencia de datos depende de experimentos para comprobar hipótesis y validar/rechazar suposiciones sobre un fenómeno particular. Es por esto, que saber diseñar experimentos es una de las habilidades más importantes de la estadística y consecuentemente de la ciencia de datos.
+
+En eset ReadMe encontrarás el concepto teórico y en el Notebook, una aplicación del diseño de experimentos al famoso [data set de avistamientos OVNI](https://www.kaggle.com/NUFORC/ufo-sightings). 
+
 Si tienes alguna pregunta, no dudes en contactarme en Twitter: @XaviGrowth
 
 ## Introducción: Observaciones y Experimentos
